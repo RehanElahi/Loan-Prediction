@@ -44,7 +44,7 @@ dataset$Self_Employed=factor(dataset$Self_Employed, levels = c('No','Yes'),label
 dataset$Dependents=factor(dataset$Dependents, levels = c('0','1','2','3+'),labels = c(0, 1,2,3))
 dataset$Property_Area=factor(dataset$Property_Area, levels = c('Urban','Semiurban','Rural'),labels = c(0, 1,2))
 
-# Splitting the dataset into the Training set and Test set
+# Splitting the dataset (training set) into two
 # install.packages('caTools')
 library(caTools)
 set.seed(123)
@@ -61,17 +61,17 @@ test_set[,6:9] = scale(test_set[,6:9])
 #to the training set. Using the caret package to
 #optimize the hyper parameters.
 library(e1071)
+library(randomForest)
 library(caret)
 set.seed(123)
-classifier=train(form=Loan_Status~.,data=training_set,method='svmRadialWeights')
+classifier=train(form=Loan_Status~.,data=training_set,method='rf')
 print(classifier)
 
 
-# Predicting the Test set results
-#y_pred1 = predict(classifier, newdata = test_set[-12])
-#y_pred2= predict(classifier, newdata = test_set[-12])
+# Check performance
+#y_pred = predict(classifier, newdata = test_set[-12])
 
-# Making the Confusion Matrix
+# Making the confusion Matrix
 #cm = table(test_set[, 12], y_pred)
 #print(cm)
 
