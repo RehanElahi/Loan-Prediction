@@ -1,1 +1,4 @@
 # Loan-Prediction
+This problem was about building a classifier that helps automate the loan eligibility process for a company called 'Dream Housing Finance'. Further description of the project and the datasets is available on the link given below. After some analysis, I came to the conclusion that the best approach would be to use the 'Random Forest' algorithm. The code uploaded, prepares the datasets, by using different approaches to impute the missing values, builds the classifier by optimizing the hyper parameter 'mty' for the algorithm and then finally saves the predictions in a file. When tested on part of the training set used for the purpose, it reveals an accuracy of 80.7% and when on the eventual training set, 77.8%.
+
+https://datahack.analyticsvidhya.com/contest/practice-problem-loan-prediction-iii/
