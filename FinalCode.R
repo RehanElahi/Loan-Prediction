@@ -57,7 +57,7 @@ training_set[,6:9] = scale(training_set[,6:9])
 test_set[,6:9] = scale(test_set[,6:9])
 
 
-#Fitting SVM with class weights classification model 
+#Fitting Random Forests classification model 
 #to the training set. Using the caret package to
 #optimize the hyper parameters.
 library(e1071)
