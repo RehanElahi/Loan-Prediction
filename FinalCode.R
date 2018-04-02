@@ -25,16 +25,6 @@ dataset$Loan_Amount_Term = ifelse(is.na(dataset$Loan_Amount_Term),
 dataset[dataset==""]=NA
 dataset= na.omit(dataset)
 
-
-
-
-
-
-
-
-
-
-
 # Encoding the target feature as factor
 dataset$Loan_Status = factor(dataset$Loan_Status, levels = c('Y','N'),labels = c(0, 1))
 dataset$Gender=factor(dataset$Gender, levels = c('Female','Male'),labels = c(0, 1))
